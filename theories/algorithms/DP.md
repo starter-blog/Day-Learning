@@ -16,4 +16,4 @@ int fibonachi(n) {
   return dp[n];
 }
 ```
-관련 알고리즘 : [Knapsack](https:\\), [Memoization](https:\\)
+관련 알고리즘 : [Knapsack](./Knapsack.md), [Memoization](./Memoization.md)

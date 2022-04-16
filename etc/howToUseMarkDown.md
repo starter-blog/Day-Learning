@@ -7,15 +7,15 @@
     * `**text**` = **text**  
     * `~~text~~` = ~~text~~  
    ***
-* 목록 : `* text || 1. text`
+* 목록 : `* text` || `1. text`
    ***
-* 인용구 : `> text || >> text`
+* 인용구 : `> text` || `>> text`
    ***
 * 수평선 : `***`
    ***
 * 개행 : `공백 두개`
    ***
-* 링크 : `[description](link)`
+* 링크 : `[description](link)` || `[description](#link)`
    ***
 * 이미지 : `![description](link)`
    ***
