@@ -10,16 +10,48 @@
 ```c++
 #include <iostream>
 #include <algorithm>
+#include <vector>
 
 using namespace std;
 
+// 무게 대비 가치가 높은 순으로 정렬
+bool compare(pair<int, int> l, pair<int, int> r) {
+  if(l.first > 0 && r.first > 0 && l.second / l.first > r.second / r.first) {
+    return true;
+  } 
+  return false;
+}
+
 int main() {
+  double result = 0;
+  double n, k; //n = 물건의 종류, k = 가방의 용량
+  double c, v; //c = 물건의 무게, v = 물건의 가치
+  vector<pair<double, double>> obj = {}; //obj = 물건 벡터
   
+  cin >> n >> k;
+  
+  for(int i = 0; i < n; i++) {
+    cin >> c >> v;
+    obj.push_back(make_pair(c,v));
+  }
+
+  sort(obj.begin(), obj.end(), compare);
+  
+  for(int i = 0; k > 0 && i < n; i++) {
+    double nn = obj[i].first;
+    
+    if(k < nn) 
+      nn = k;
+    
+    result += obj[i].second * nn / obj[i].first;
+    k -= nn;
+  }
+  cout << result;
 }
 ```
 ***
 ### 물건을 나눌 수 없는 경우
-```
+```c++
 #include <stdio.h>
 
 int dp[100];

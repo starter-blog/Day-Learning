@@ -3,4 +3,4 @@ One day, one commit (maybe)
 
 알고리즘 공부
 
-[DP](./algorithm/dp.md)
+[20220416](./diary/20220416.md)  
