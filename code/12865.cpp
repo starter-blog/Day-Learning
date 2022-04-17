@@ -1,29 +1,29 @@
-#include <stdio.h>
+#include <iostream>
+#include <vector>
 
-int n, k;
-int dp[100];
-int w[100];
-int v[100];
-int maxv = 0;
+using namespace std;
 
-int dp(int nw, int nv, int i) {
-  if(i == n) return nv;
-  if(nw < w[i]) {
-    return dp(nw, nv, i + 1);
-  }
-  else {
-    if(nv + v[i] > maxv) maxv = nv + v[i];
-    int a = dp(nw - w[i], nv + v[i], i + 1);
-    int b = dp(nw, nv, i + 1);
-    return a > b ? a : b;
-  }
+int m[100][100001]; //m[물건 최대 + 1][용량 최대 + 1]
+int w[100], v[100]; //w = 물건의 무게, v = 물건의 가치
+  
+int dp(int n, int k) {
+  if(n < 0) return 0;
+  if(m[n][k]) return m[n][k];
+  if(k - w[n] < 0) return dp(n - 1, k);
+  int l = dp(n - 1, k);
+  int r = dp(n - 1, k - w[n]) + v[n];
+  m[n][k] = l > r ? l : r;
+  return m[n][k];
 }
 
 int main() {
-  scanf("%d %d", &n, &k);
+  int n, k; //n = 물건의 종류, k = 가방의 용량
+
+  cin >> n >> k;
+  
   for(int i = 0; i < n; i++) {
-    scanf("%d %d", &w[i], &v[i]);
+    cin >> w[i] >> v[i];
   }
-  dp(k, 0, 0);
-  printf("%d\n", maxv);
+  
+  cout << dp(n - 1, k);
 }
