@@ -3,6 +3,11 @@
 
 using namespace std;  
 vector<vector<int>> v = { {1, 1}, {1, 0} };
+/*
+{ fn    , fn - 1 } { 1 , 1 }  >> { fn + fn - 1 , fn     }
+{ fn - 1, fn - 2 } { 1 , 0 }  >> { fn          , fn - 1 }
+*/
+
 
 vector<vector<unsigned long long>> mul(vector<vector<unsigned long long>> l) {
   vector<vector<unsigned long long>> result = {{0, 0}, {0, 0}};
