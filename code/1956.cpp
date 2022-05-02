@@ -17,8 +17,8 @@ int main() {
     cin >> a >> b >> c;
     d[a][b] = c;
   }
-  for(int i = 1; i <= v; i++) {
-    for(int j = 1; j <= v; j++) {
+  for(int j = 1; j <= v; j++) {
+    for(int i = 1; i <= v; i++) {
       for(int k = 1; k <= v; k++) {
         if(d[i][j] < maxN && d[j][k] < maxN)
         d[i][k] = d[i][k] < d[i][j] + d[j][k] ? d[i][k] : d[i][j] + d[j][k];
