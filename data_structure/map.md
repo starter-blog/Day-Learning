@@ -26,4 +26,11 @@ map[key] = value;
 ```c++
 m.count(key);
 m.size();
+m.begin();
+m.end();
+//map은 인덱스의 순서가 없어서 탐색시 begin, end를 사용
+for(auto i = m.begin(); i != m.end(); i++) {
+  int value = *i;
+  ...
+}
 ```

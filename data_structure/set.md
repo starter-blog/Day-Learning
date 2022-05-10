@@ -25,4 +25,9 @@ s.insert(value));
 ```c++
 s.count(key);
 s.size();
+//set은 인덱스의 순서가 없어서 탐색시 begin, end를 사용
+for(auto i = s.begin(); i != s.end(); i++) {
+  int value = *i;
+  ...
+}
 ```
