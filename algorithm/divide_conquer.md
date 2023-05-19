@@ -7,5 +7,5 @@ int square(int n, int pow) {
 
   int divide = square(n, pow / 2);
   if(pow % 2) return divide * divide * n;
-  else return divide * devide
+  else return divide * divide
 }
